@@ -1,21 +1,21 @@
-body { margin: 0; overflow: hidden; background: #000; font-family: 'Arial'; }
+body { margin: 0; background: #000; overflow: hidden; font-family: 'Arial', sans-serif; }
 .hidden { display: none !important; }
 
-#login-screen { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #111; z-index: 100; }
-.login-box { background: white; padding: 40px; border-radius: 20px; text-align: center; color: #333; }
-input { display: block; width: 250px; margin: 10px auto; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
-button { padding: 10px 30px; background: #ff4757; color: white; border: none; cursor: pointer; font-weight: bold; }
+/* Màn hình xoay */
+#rotate-device { position: fixed; inset: 0; background: #000; color: #fff; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+@media (orientation: landscape) { #rotate-device { display: none; } #login-screen { display: flex; } }
 
-#game-ui { position: absolute; top: 20px; width: 100%; text-align: center; color: white; font-size: 20px; z-index: 10; text-shadow: 2px 2px #000; }
-#aim-dot { position: absolute; top: 50%; left: 50%; width: 10px; height: 10px; background: red; border-radius: 50%; transform: translate(-50%, -50%); border: 2px solid white; }
+/* Login nghệ thuật */
+#login-screen { position: fixed; inset: 0; background: linear-gradient(45deg, #0f2027, #203a43, #2c5364); display: none; align-items: center; justify-content: center; z-index: 1000; }
+.login-card { background: rgba(0,0,0,0.6); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px); color: #fff; }
+input { padding: 10px; border-radius: 5px; border: none; width: 200px; margin: 10px; }
 
-/* Bàn gỗ ghép chìa */
-#table-view { position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 50; display: flex; align-items: center; justify-content: center; }
-#table-surface { width: 600px; height: 400px; background: #5d4037; border: 15px solid #3e2723; position: relative; cursor: none; }
-#mold { width: 300px; height: 100px; border: 4px dashed gold; margin: 50px auto; }
-#bag-contents { display: flex; flex-wrap: wrap; gap: 10px; padding: 20px; }
-.piece { font-size: 40px; cursor: pointer; }
-#hand-cursor { position: absolute; font-size: 60px; pointer-events: none; transition: 0.1s; }
+/* Game UI */
+#crosshair { position: absolute; top: 50%; left: 50%; width: 30px; height: 30px; border: 1px solid #fff; border-radius: 50%; transform: translate(-50%, -50%); opacity: 0.5; }
+#hud { position: absolute; top: 30px; width: 100%; display: flex; justify-content: space-around; color: gold; font-weight: bold; font-size: 20px; z-index: 10; }
+#mobile-controls { position: absolute; bottom: 40px; right: 40px; display: flex; gap: 20px; }
+#btn-hook, #btn-boost { width: 90px; height: 90px; border-radius: 50%; background: rgba(255,255,255,0.15); color: #fff; border: 2px solid #fff; backdrop-filter: blur(5px); }
+.dimmed { opacity: 0.3; }
 
-.paper { background: #fff9e6; padding: 50px; width: 400px; margin: 100px auto; box-shadow: 0 0 50px rgba(0,0,0,0.5); transform: rotate(-2deg); }
-.writing { font-family: 'Brush Script MT', cursive; font-size: 28px; color: #2d3436; line-height: 1.6; }
+/* Hiệu ứng máu */
+#blood-overlay { position: absolute; inset: 0; background: radial-gradient(circle, #720000 0%, transparent 100%); opacity: 0; z-index: 100; pointer-events: none; }
