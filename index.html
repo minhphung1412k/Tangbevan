@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>HÀNH TRÌNH TRÊN VÁCH NÚI - TẶNG VÂN</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.161.0/three.min.js"></script>
+</head>
+<body>
+    <div id="login-screen">
+        <div class="login-box">
+            <h1>HỆ THỐNG TỔNG TÀI</h1>
+            <input type="text" id="username" placeholder="Tài khoản: emcoyeubminhhong">
+            <input type="password" id="password" placeholder="Mật khẩu: emyeubminhlam">
+            <button onclick="checkLogin()">CHINH PHỤC NÚI CAO</button>
+        </div>
+    </div>
+
+    <div id="game-ui" class="hidden">
+        <div id="info">Mảnh ghép: <span id="frags">0</span>/10 | Quái: <span id="m-name">Phát</span></div>
+        <div id="aim-dot"></div> <button id="open-bag-btn" class="hidden">MỞ TÚI ĐỒ (🎒)</button>
+    </div>
+
+    <div id="table-view" class="hidden">
+        <div id="table-surface">
+            <div id="mold"></div>
+            <div id="bag-contents"></div>
+            <div id="hand-cursor">🖐️</div>
+        </div>
+    </div>
+
+    <div id="letter-fade" class="hidden">
+        <div class="paper">
+            <div class="writing">
+                Vân ơi... <br><br>
+                Đi hết con đường đá này, anh chỉ muốn nói là... <br>
+                Anh yêu em nhiều lắm, vợ của anh! ❤️
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
