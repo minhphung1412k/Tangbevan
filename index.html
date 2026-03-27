@@ -2,42 +2,46 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>HÀNH TRÌNH TRÊN VÁCH NÚI - TẶNG VÂN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>ETERNITY: VÂN</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.161.0/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-    <div id="login-screen">
-        <div class="login-box">
-            <h1>HỆ THỐNG TỔNG TÀI</h1>
-            <input type="text" id="username" placeholder="Tài khoản: emcoyeubminhhong">
-            <input type="password" id="password" placeholder="Mật khẩu: emyeubminhlam">
-            <button onclick="checkLogin()">CHINH PHỤC NÚI CAO</button>
+    <div id="rotate-device">
+        <div class="icon">🔄</div>
+        <p>Xin mời vợ quay ngang để mukbang trò chơi</p>
+    </div>
+
+    <div id="login-screen" class="hidden">
+        <div class="login-card">
+            <h1>HÀNH TRÌNH TÌM LẠI KÝ ỨC</h1>
+            <input type="password" id="password" placeholder="Mật khẩu của chúng mình...">
+            <button onclick="checkLogin()">KHỞI ĐẦU</button>
         </div>
     </div>
 
     <div id="game-ui" class="hidden">
-        <div id="info">Mảnh ghép: <span id="frags">0</span>/10 | Quái: <span id="m-name">Phát</span></div>
-        <div id="aim-dot"></div> <button id="open-bag-btn" class="hidden">MỞ TÚI ĐỒ (🎒)</button>
-    </div>
-
-    <div id="table-view" class="hidden">
-        <div id="table-surface">
-            <div id="mold"></div>
-            <div id="bag-contents"></div>
-            <div id="hand-cursor">🖐️</div>
+        <div id="crosshair"></div>
+        <div id="hud">
+            <div>Mảnh Chìa Khóa: <span id="frags">0</span>/10</div>
+            <div id="boost-status" class="dimmed">BOOST (SHIFT)</div>
+        </div>
+        <div id="mobile-controls">
+            <button id="btn-hook">MÓC DÂY</button>
+            <button id="btn-boost" class="dimmed">BỨC TỐC</button>
         </div>
     </div>
 
-    <div id="letter-fade" class="hidden">
-        <div class="paper">
-            <div class="writing">
-                Vân ơi... <br><br>
-                Đi hết con đường đá này, anh chỉ muốn nói là... <br>
-                Anh yêu em nhiều lắm, vợ của anh! ❤️
-            </div>
-        </div>
+    <div id="death-screen" class="hidden">
+        <div id="blood-overlay"></div>
+        <h2>ANH SẼ KHÔNG ĐỂ EM RA ĐI...</h2>
+        <button onclick="location.reload()">HỒI SINH (RESTART)</button>
     </div>
+
+    <audio id="snd-forest" src="assets/forest.mp3" loop></audio>
+    <audio id="snd-slash" src="assets/slash.mp3"></audio>
+    <audio id="snd-blood" src="assets/blood.mp3"></audio>
 
     <script src="script.js"></script>
 </body>
