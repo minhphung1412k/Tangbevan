@@ -1,21 +1,61 @@
-body { margin: 0; background: #000; overflow: hidden; font-family: 'Arial', sans-serif; }
+body { margin: 0; background: #000; overflow: hidden; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+/* LỚP ẨN QUAN TRỌNG */
 .hidden { display: none !important; }
 
-/* Màn hình xoay */
-#rotate-device { position: fixed; inset: 0; background: #000; color: #fff; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-@media (orientation: landscape) { #rotate-device { display: none; } #login-screen { display: flex; } }
+/* XOAY NGANG */
+#rotate-device { 
+    position: fixed; inset: 0; background: #000; color: #fff; z-index: 9999; 
+    display: flex; flex-direction: column; align-items: center; justify-content: center; 
+}
+@media (orientation: landscape) { #rotate-device { display: none; } }
 
-/* Login nghệ thuật */
-#login-screen { position: fixed; inset: 0; background: linear-gradient(45deg, #0f2027, #203a43, #2c5364); display: none; align-items: center; justify-content: center; z-index: 1000; }
-.login-card { background: rgba(0,0,0,0.6); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px); color: #fff; }
-input { padding: 10px; border-radius: 5px; border: none; width: 200px; margin: 10px; }
+/* LOGIN BACKGROUND NGHỆ THUẬT */
+#login-screen { 
+    position: fixed; inset: 0; 
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); 
+    display: flex; flex-direction: column; align-items: center; justify-content: center; 
+    z-index: 1000; 
+}
 
-/* Game UI */
-#crosshair { position: absolute; top: 50%; left: 50%; width: 30px; height: 30px; border: 1px solid #fff; border-radius: 50%; transform: translate(-50%, -50%); opacity: 0.5; }
-#hud { position: absolute; top: 30px; width: 100%; display: flex; justify-content: space-around; color: gold; font-weight: bold; font-size: 20px; z-index: 10; }
-#mobile-controls { position: absolute; bottom: 40px; right: 40px; display: flex; gap: 20px; }
-#btn-hook, #btn-boost { width: 90px; height: 90px; border-radius: 50%; background: rgba(255,255,255,0.15); color: #fff; border: 2px solid #fff; backdrop-filter: blur(5px); }
-.dimmed { opacity: 0.3; }
+.login-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 50px; border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center; box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
 
-/* Hiệu ứng máu */
-#blood-overlay { position: absolute; inset: 0; background: radial-gradient(circle, #720000 0%, transparent 100%); opacity: 0; z-index: 100; pointer-events: none; }
+h1 { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.5); margin-bottom: 5px; }
+
+input { 
+    display: block; width: 280px; padding: 15px; margin: 20px auto;
+    border-radius: 50px; border: none; background: rgba(255,255,255,0.9);
+    font-size: 16px; text-align: center; outline: none;
+}
+
+#start-btn {
+    padding: 15px 40px; border-radius: 50px; border: none;
+    background: #ff4757; color: white; font-weight: bold;
+    cursor: pointer; transition: 0.3s; box-shadow: 0 5px 15px rgba(255,71,87,0.4);
+}
+#start-btn:hover { transform: scale(1.1); background: #ff6b81; }
+
+/* GAME UI */
+#hud { 
+    position: absolute; top: 20px; width: 100%; 
+    display: flex; justify-content: space-around; color: #fff; pointer-events: none;
+}
+.stat-box { background: rgba(0,0,0,0.5); padding: 10px 20px; border-radius: 20px; border: 1px solid gold; }
+
+#mobile-controls { position: absolute; bottom: 30px; right: 30px; display: flex; gap: 15px; }
+#btn-hook, #btn-boost { 
+    width: 85px; height: 85px; border-radius: 50%; 
+    background: rgba(255,255,255,0.2); border: 2px solid #fff; color: #fff; font-weight: bold;
+}
+
+/* MÀN HÌNH CHẾT */
+#death-screen { position: fixed; inset: 0; z-index: 5000; display: flex; align-items: center; justify-content: center; }
+#blood-overlay { position: absolute; inset: 0; background: radial-gradient(circle, #ff0000 0%, #000 100%); opacity: 0.8; }
+.death-content { z-index: 5001; text-align: center; color: white; }
+.restart-btn { padding: 15px 30px; background: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
