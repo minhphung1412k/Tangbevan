@@ -13,30 +13,33 @@
         <p>Xin mời vợ quay ngang để mukbang trò chơi</p>
     </div>
 
-    <div id="login-screen" class="hidden">
-        <div class="login-card">
+    <div id="login-screen">
+        <div class="stars-bg"></div> <div class="login-card">
             <h1>HÀNH TRÌNH TÌM LẠI KÝ ỨC</h1>
+            <p style="color: #ffcccc; margin-bottom: 20px;">Dành riêng cho Vân yêu dấu</p>
             <input type="password" id="password" placeholder="Mật khẩu của chúng mình...">
-            <button onclick="checkLogin()">KHỞI ĐẦU</button>
+            <button id="start-btn" onclick="checkLogin()">KHỞI ĐẦU</button>
         </div>
     </div>
 
     <div id="game-ui" class="hidden">
         <div id="crosshair"></div>
         <div id="hud">
-            <div>Mảnh Chìa Khóa: <span id="frags">0</span>/10</div>
-            <div id="boost-status" class="dimmed">BOOST (SHIFT)</div>
+            <div class="stat-box">Mảnh Chìa Khóa: <span id="frags">0</span>/10</div>
+            <div id="boost-status" class="boost-ready">BOOST (SHIFT): READY</div>
         </div>
         <div id="mobile-controls">
-            <button id="btn-hook">MÓC DÂY</button>
-            <button id="btn-boost" class="dimmed">BỨC TỐC</button>
+            <button id="btn-hook">MÓC DÂY (E)</button>
+            <button id="btn-boost">BỨC TỐC</button>
         </div>
     </div>
 
     <div id="death-screen" class="hidden">
         <div id="blood-overlay"></div>
-        <h2>ANH SẼ KHÔNG ĐỂ EM RA ĐI...</h2>
-        <button onclick="location.reload()">HỒI SINH (RESTART)</button>
+        <div class="death-content">
+            <h2>ANH SẼ KHÔNG ĐỂ EM RA ĐI...</h2>
+            <button class="restart-btn" onclick="location.reload()">HỒI SINH (RESTART)</button>
+        </div>
     </div>
 
     <audio id="snd-forest" src="assets/forest.mp3" loop></audio>
